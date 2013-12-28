@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="AdvTaskKillerSettings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/startup_setting_title">
+        <CheckBoxPreference android:persistent="true" android:title="@string/autostart_title" android:key="IsAutoStartEnabled" android:summary="@string/autostart_summary" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/view_setting_title">
+        <CheckBoxPreference android:persistent="true" android:title="@string/shownotification_title" android:key="IsNotificationEnabled" android:summary="@string/shownotification_summary" android:defaultValue="true" />
+        <com.rechild.advancedtaskkiller.SeekBarPreference android:persistent="true" android:max="100" android:text="pixel" android:title="@string/itemheight_title" android:key="ItemHeight" android:summary="@string/itemheight_summary" android:defaultValue="36" android:dialogMessage="Set height for item of running list" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/ignore_setting_title">
+        <PreferenceScreen android:title="@string/ignorelist_title" android:summary="@string/ignorelist_summary">
+            <intent android:action="com.rechild.advancedtaskkiller.intent.action.IgnoreList" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:persistent="true" android:title="@string/ignore_service_title" android:key="IgnoreServiceFrontApp" android:summary="@string/ignore_service_summary" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/action_setting_title">
+        <ListPreference android:persistent="true" android:entries="@array/menu_task_operation" android:title="@string/clickaction_title" android:selectable="true" android:key="ClickActionValue" android:summary="@string/clickaction_summary" android:defaultValue="1" android:entryValues="@array/menu_task_operation_value" />
+        <ListPreference android:entries="@array/menu_task_operation" android:title="@string/longpressaction_title" android:key="LongPressActionValue" android:summary="@string/longpressaction_summary" android:defaultValue="5" android:entryValues="@array/menu_task_operation_value" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/autokill_setting_title">
+        <ListPreference android:entries="@array/auto_kill_items" android:title="@string/autokilllevel_title" android:key="AutoKillLevelValue" android:summary="@string/autokilllevel_summary" android:defaultValue="0" android:entryValues="@array/auto_kill_items_value" />
+        <ListPreference android:entries="@array/auto_kill_frequency" android:title="@string/autokillfrequency_title" android:key="AutoKillFrequecyValue" android:summary="@string/autokillfrequency_summary" android:defaultValue="3600000" android:entryValues="@array/auto_kill_frequency_value" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/security_title">
+        <ListPreference android:entries="@array/security_level_items" android:title="@string/security_level_title" android:key="SecurityLevel" android:summary="@string/security_level_summary" android:defaultValue="0" android:entryValues="@array/security_level_items_value" />
+    </PreferenceCategory>
+</PreferenceScreen>
